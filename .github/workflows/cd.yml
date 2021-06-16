@@ -1,9 +1,9 @@
 name: Continous Delivery .NET CORE
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   workflow_dispatch:
 
@@ -20,4 +20,4 @@ jobs:
           DATABASE_NAME: ${{ secrets.DB_NAME }}
           DATABASE_USERNAME: ${{ secrets.USER }}
           DATABASE_PASSWORD: ${{ secrets.PASSWORD }}
-          DATABASE_SCRIPT: './script.sql'
+          DATABASE_SCRIPT: '././script.sql'
