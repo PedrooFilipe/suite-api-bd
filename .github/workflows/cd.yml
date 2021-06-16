@@ -20,4 +20,4 @@ jobs:
           DATABASE_NAME: ${{ secrets.DB_NAME }}
           DATABASE_USERNAME: ${{ secrets.USER }}
           DATABASE_PASSWORD: ${{ secrets.PASSWORD }}
-          DATABASE_SCRIPT: './script.sql'
+          DATABASE_SCRIPT: 'script.sql'
