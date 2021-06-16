@@ -1,0 +1,23 @@
+name: Continous Delivery .NET CORE
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  CD:
+    name: Continuous Delivery
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy MySql
+        uses: gtadam/mysql-deploy-action@v1
+        with:
+          DATABASE_HOST: ${{ secrets.HOST }}
+          DATABASE_PORT: ${{ secrets.PORT }}
+          DATABASE_NAME: ${{ secrets.DB_NAME }}
+          DATABASE_USERNAME: ${{ secrets.USER }}
+          DATABASE_PASSWORD: ${{ secrets.PASSWORD }}
+          DATABASE_SCRIPT: './script.sql'
